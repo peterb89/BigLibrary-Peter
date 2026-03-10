@@ -4,7 +4,7 @@
 require_once "db_connect.php";
 
 if (isset($_GET['id'])) {
-    $id = $_GET['id'];
+    $id = intval($_GET['id']);
 
     $sql = "SELECT * FROM biglibrary_safe WHERE id = $id";
     $result = mysqli_query($conn, $sql);
@@ -30,8 +30,12 @@ if (isset($_GET['id'])) {
 </head>
 <body>
 
-<div class="container mt-4" style="max-width: 600px;">
+<div class="container mt-4">
     <h1 class="mb-4">Edit Media</h1>
+
+    <div class="row justify-content-center">
+    <div class="col-12 col-md-8 col-lg-6">
+
 
     <form method="POST" action="update.php">
 

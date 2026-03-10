@@ -4,7 +4,7 @@
 require_once "db_connect.php";
 
 if (isset($_GET['id'])) {
-    $id = $_GET['id'];
+    $id = intval($_GET['id']);
 
     $sql = "SELECT * FROM biglibrary_safe WHERE id = $id";
     $result = mysqli_query($conn, $sql);
@@ -30,17 +30,17 @@ if (isset($_GET['id'])) {
 </head>
 <body>
 
-<div class="container mt-4" style="max-width: 800px;">
+<div class="container mt-4">
 <h1 class="mb-4">Media Details</h1>
 
     <div class="card mb-3">
         <div class="row g-0">
 
-            <div class="col-md-4">
-                <img src="images/<?php echo $row['image']; ?>" class="img-fluid rounded-start" alt="cover">
+            <div class="col-12 col-md-4">
+                <img src="img/<?php echo $row['image']; ?>" class="img-fluid rounded-start" alt="cover">
             </div>
 
-            <div class="col-md-8">
+            <div class="col-12 col-md-8">
                 <div class="card-body">
 
                 <h3 class="card-title"><?php echo $row['title']; ?></h3>

@@ -5,7 +5,7 @@ require_once "db_connect.php";
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
-    $id = $_POST["id"];
+    $id = intval($_POST["id"]);
     $title = mysqli_real_escape_string($conn, $_POST["title"]);
     $image = mysqli_real_escape_string($conn, $_POST["image"]);
     $isbn = mysqli_real_escape_string($conn, $_POST["isbn"]);
@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             publisher_name = '$publisher_name',
             publisher_address = '$publisher_address',
             publish_date = '$publish_date'
-            WHERE id = $id";
+            WHERE id = '$id'";
 
     if (mysqli_query($conn, $sql)) {
         header("Location: details.php?id=$id");

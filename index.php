@@ -39,13 +39,15 @@ $result = mysqli_query($conn, $sql);
 
 <?php
 if (mysqli_num_rows($result) > 0) {
+echo "<div class='row'>";
 while ($row = mysqli_fetch_assoc($result)) {
-echo "<div class='card mb-3 ms-2' style='max-width: 540px;'>";
+echo "<div class='col-12 col-md-6 col-lg-4'>";
+echo "<div class='card mb-3'>";
 echo "  <div class='row g-0'>";
-echo "    <div class='col-md-4'>";
-echo "      <img src='images/" . $row['image'] . "' class='img-fluid rounded-start' alt='cover'>";
+echo "    <div class='col-12 col-md-4'>";
+echo "      <img src='img/" . $row['image'] . "' class='img-fluid rounded-start' alt='cover'>";
 echo "    </div>";
-echo "    <div class='col-md-8'>";
+echo "    <div class='col-12 col-md-8'>";
 echo "      <div class='card-body'>";
 echo "        <h5 class='card-title'>" . $row['title'] . "</h5>";
 echo "        <p class='card-text'><strong>Author:</strong> " . $row['author_first_name'] . " " . $row['author_last_name'] . "</p>";
@@ -60,13 +62,15 @@ echo "      </div>";
 echo "    </div>";
 echo "  </div>";
 echo "</div>";
+echo "</div>";
 
 }
+echo "</div>";
 } else {
     echo "No media found.";
 }
 
-
+echo "</div>";
 
 
 ?>

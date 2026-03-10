@@ -41,8 +41,10 @@ if (mysqli_query($conn, $sql)) {
     <title>Create Media</title>
 </head>
 <body>
-    <div class="container mt-4" style="max-width: 600px;">
+    <div class="container mt-4">
     <h1>Add New Media</h1>
+
+    <div class="row justify-content-center"> <div class="col-12 col-md-8 col-lg-6">
 
     <form method="POST">
 
@@ -104,8 +106,9 @@ if (mysqli_query($conn, $sql)) {
         <button type="submit" class="btn btn-primary">Add Media</button>
 
     </form>
-
-    </div>
+</div>
+</div>
+</div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
